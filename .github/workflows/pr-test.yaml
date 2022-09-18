@@ -1,0 +1,28 @@
+name: PR Workflow
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened]
+
+jobs:
+  Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+          
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Rspec Tests
+        run: rake spec
+
+      - name: Cucumber Tests
+        run: rake cucumber
+        

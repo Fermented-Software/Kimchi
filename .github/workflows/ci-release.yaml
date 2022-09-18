@@ -1,0 +1,23 @@
+name: Release Workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+          
+      - name: Install dependencies
+        run: bundle install
+        
+      - name: Run tests
+        run: bundle exec rake
