@@ -13,10 +13,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1.2
-          
+
       - name: Install dependencies
         run: bundle install
 
@@ -25,4 +25,3 @@ jobs:
 
       - name: Cucumber Tests
         run: rake cucumber
-        
