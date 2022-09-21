@@ -1,0 +1,30 @@
+name: Test Coverage Suite
+on:
+  pull-request:
+    branches:
+	  - main
+	  - develop 
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+  
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+  
+      - name: Install dependencies
+   	    run: bundle install
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
