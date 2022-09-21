@@ -2,11 +2,11 @@ name: Test Coverage Suite
 on:
   pull-request:
     branches:
-	  - main
-	  - develop 
+      - main
+      - develop 
   push:
     branches-ignore:
-      - main
+    - main
 
 jobs:
   build:
