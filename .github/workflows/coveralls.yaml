@@ -1,38 +1,33 @@
-name: "Test Coverage Suite"
+name: Test Coverage Suite
+on:
+  pull_request:
+    branches:
+      - main
+      - develop 
+  push:
+    branches-ignore:
+    - main
 
-on: 
-  pull_request: 
-    branches: 
-      - main
-      - develop
-  push: 
-    branches-ignore: 
-      - main
-jobs: 
-  build: 
+jobs:
+  build:
     name: Build
     runs-on: ubuntu-latest
-    steps: 
-      - name: "Check out repository code"
+    steps:
+      - name: Check out repository code
         uses: actions/checkout@v3
-
-      - name: "Set up Ruby"
+  
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
-        with: 
-          ruby-version: "3.1.2"
+        with:
+          ruby-version: 3.1.2
+  
+      - name: Install dependencies
+        run: bundle install
 
-      - name: "Install dependencies"
-        run: "bundle install"
+      - name: Run tests
+        run: bundle exec rspec spec
 
-  tests: 
-    name: Tests
-    runs-on: ubuntu-latest
-    steps: 
-      - name: "Run test suite"
-        run: "bundle exec rspec spec"
-
-      - name: "Send coverage to Coveralls"
+      - name: Coveralls
         uses: coverallsapp/github-action@master
-        with: 
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
