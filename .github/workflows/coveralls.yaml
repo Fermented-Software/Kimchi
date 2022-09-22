@@ -24,10 +24,12 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
-      - name: Run tests
+  run:
+	name: Test Coverage
+      - name: Run test suite
         run: bundle exec rspec spec
 
-      - name: Coveralls
+      - name: Send coverage to Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
