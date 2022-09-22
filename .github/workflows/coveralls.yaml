@@ -1,5 +1,6 @@
 name: "Test Coverage Suite"
-true: 
+
+on: 
   pull_request: 
     branches: 
       - main
@@ -24,7 +25,7 @@ jobs:
         run: "bundle install"
 
   tests: 
-    name: "Executing tests"
+    name: Tests
     runs-on: ubuntu-latest
     steps: 
       - name: "Run test suite"
