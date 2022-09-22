@@ -27,8 +27,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# Add coveralls for testing coverage [https://coveralls.io]
-gem 'coveralls_reborn', require: false
+# Output test coverage to lcov file so that we can push it to coveralls [https://coveralls.io]
+gem 'simplecov-lcov', '~> 0.8.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
