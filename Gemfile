@@ -28,7 +28,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Add coveralls for testing coverage [https://coveralls.io]
-gem 'coveralls', require: false
+gem 'coveralls_reborn', require: false
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

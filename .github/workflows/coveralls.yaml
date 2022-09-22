@@ -25,9 +25,9 @@ jobs:
         run: bundle install
 
       - name: Run tests
-        run: bundle exec rails test
+        run: bundle exec rspec spec
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Coveralls
+#        uses: coverallsapp/github-action@master
+#        with:
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
