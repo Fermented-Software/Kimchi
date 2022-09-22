@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
-  run:
-	name: Test Coverage
+  tests:
+    name: Executing tests
       - name: Run test suite
         run: bundle exec rspec spec
 
