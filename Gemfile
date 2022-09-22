@@ -27,8 +27,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# Add coveralls for testing coverage [https://coveralls.io]
-gem 'coveralls', require: false
+# Simple test coverage analysis tool for Ruby [https://github.com/simplecov-ruby/simplecov]
+gem 'simplecov', '~> 0.18'
 
 # Outputs test coverage to lcov file [https://coveralls.io]
 gem 'simplecov-lcov', '~> 0.8.0'
