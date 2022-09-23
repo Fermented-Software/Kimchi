@@ -34,5 +34,10 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Test Coverages
+/coverage
+
+# Vim files
 *.swp
 *~
+
