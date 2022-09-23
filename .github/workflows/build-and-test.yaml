@@ -1,27 +1,38 @@
-name: PR Workflow
+name: Test Coverage Suite
 on:
   pull_request:
     branches:
       - main
+      - develop 
     types: [opened, synchronize, reopened]
+  push:
+    branches:
+      - main
+      - develop 
 
 jobs:
-  Tests:
+  build:
+    name: Build and Test
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-
+  
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1.2
-
+  
       - name: Install dependencies
         run: bundle install
 
-      - name: Rspec Tests
+      - name: Run Rspec test suite
         run: rake spec
 
-      - name: Cucumber Tests
+      - name: Run Cucumber Tests
         run: rake cucumber
+
+      - name: Send test coverage to Coveralls.io
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
