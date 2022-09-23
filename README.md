@@ -4,6 +4,9 @@
 ![GA Release Workflow main](https://github.com/egydiopacheco/Kimchi/actions/workflows/ci-release.yaml/badge.svg?branch=main)
 ![GA Pull Request Workflow main](https://github.com/egydiopacheco/Kimchi/actions/workflows/build-and-test.yaml/badge.svg?branch=main)
 
+## A aplicacao
+A aplicacao é disponibilizada pelo Heroku e pode ser acessada por esse link: kimchi-app.herokuapp.com
+
 ## Integrantes
 
 - Egydio Pacheco
