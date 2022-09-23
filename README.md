@@ -5,7 +5,7 @@
 ![GA Pull Request Workflow main](https://github.com/egydiopacheco/Kimchi/actions/workflows/build-and-test.yaml/badge.svg?branch=main)
 
 ## A aplicacao
-A aplicacao é disponibilizada pelo Heroku e pode ser acessada por [este link:](kimchi-app.herokuapp.com).
+A aplicacao é disponibilizada pelo Heroku e pode ser acessada por [este link](https://kimchi-app.herokuapp.com).
 
 ## Integrantes
 
