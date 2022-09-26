@@ -4,8 +4,8 @@
 ![GA Release Workflow main](https://github.com/Fermented-Software/Kimchi/actions/workflows/ci-release.yaml/badge.svg?branch=main)
 ![GA Pull Request Workflow main](https://github.com/Fermented-Software/Kimchi/actions/workflows/build-and-test.yaml/badge.svg?branch=main)
 
-## A aplicacao
-A aplicacao é disponibilizada pelo Heroku e pode ser acessada por [este link](https://kimchi-app.herokuapp.com).
+## A aplicação
+A aplicação será uma ferramenta de UI para serviços de mensageria (AWS Kinesis, Kafka, RabbitMQ) é disponibilizada pelo Heroku e pode ser acessada por [este link](https://kimchi-app.herokuapp.com).
 
 ## Integrantes
 
