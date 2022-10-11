@@ -4,8 +4,11 @@
 ![GA Release Workflow main](https://github.com/Fermented-Software/Kimchi/actions/workflows/ci-release.yaml/badge.svg?branch=main)
 ![GA Pull Request Workflow main](https://github.com/Fermented-Software/Kimchi/actions/workflows/build-and-test.yaml/badge.svg?branch=main)
 
-## A aplicacao
-A aplicacao é disponibilizada pelo Heroku e pode ser acessada por [este link](https://kimchi-app.herokuapp.com).
+## A aplicação
+A aplicação é disponibilizada pelo Heroku e pode ser acessada por [este link](https://kimchi-app.herokuapp.com).
+
+## Ferramenta de gestão de projetos
+Utilizamos o Pivotal Tracker e este pode ser acesso [aqui](https://www.pivotaltracker.com/n/projects/2603031)
 
 ## Integrantes
 
