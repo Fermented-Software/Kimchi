@@ -6,6 +6,7 @@
 
 ## A aplicação
 A aplicação é disponibilizada pelo Heroku e pode ser acessada por [este link](https://kimchi-app.herokuapp.com).
+A aplicação será uma ferramenta de UI para serviços de mensageria (AWS Kinesis, Kafka, RabbitMQ) é disponibilizada pelo Heroku e pode ser acessada por [este link](https://kimchi-app.herokuapp.com).
 
 ## Ferramenta de gestão de projetos
 Utilizamos o Pivotal Tracker e este pode ser acesso [aqui](https://www.pivotaltracker.com/n/projects/2603031)
