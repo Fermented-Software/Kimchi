@@ -12,8 +12,8 @@ Feature: List Streams
 
     Scenario: Infrastructure instability
 
-        Given that I have successfully signed-in
-        And I am on the dashboard page
+        Given that I have signed-in
+        And I am at the dashboard page
         And I make a requisition to list my streams
         And I receive a connection error
         Then I expect to receive a clear and descriptive message of error
