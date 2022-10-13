@@ -1,19 +1,19 @@
-Given('that I have a valid AWS account') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
+Given('that I am at sign-in page') do
+  visit '/login'
+end
+
+When('I type my {string}') do |field_name| 
+  fill_in string, :with => field_name
+end
   
-  Given("I am at the sign-in page") do
-    visit "/"
-  end
+When('I press the {string} button') do |button_name|
+  click_on string, :with => button_name
+end
+
+Then('I expect to be redirected to my dashboard') do
+  visit '/dashboard'
+end
   
-  When('I type my {string}') do |field_name| 
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  When('I press the {string} button') do |button_name|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Then('I expect to be redirected to my dashboard') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
+Then('I expect to {string}') do |error_string|
+  expect(page).to have_content(error_string)
+end
