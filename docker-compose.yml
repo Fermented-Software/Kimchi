@@ -7,3 +7,8 @@ services:
       - .:/kimchi
     ports:
       - "3000:3000"
+  mongodb:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"
+    command: mongod --config /usr/local/etc/mongod.conf 2>&1 > /dev/null
