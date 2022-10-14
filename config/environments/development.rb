@@ -41,7 +41,8 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  # Commenting out because of mongoid
+  # config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -58,10 +59,12 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation_warnings = []
 
   # Raise an error on page load if there are pending migrations.
-  config.active_record.migration_error = :page_load
+  # commenting out because of mongoid
+  # config.active_record.migration_error = :page_load
 
   # Highlight code that triggered database queries in logs.
-  config.active_record.verbose_query_logs = true
+  # commenting out because of mongoid
+  # config.active_record.verbose_query_logs = true
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
