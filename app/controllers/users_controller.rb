@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  protect_from_forgery with: :null_session
-
   before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json
