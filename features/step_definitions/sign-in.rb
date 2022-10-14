@@ -11,7 +11,7 @@ Then('I should to be redirected to my dashboard') do
 end
 
 Given('I am at the sign-up page') do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit "/sign-up"
 end
 
 When('I fill the field {string} with {string}') do |field, value|
