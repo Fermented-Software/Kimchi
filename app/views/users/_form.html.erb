@@ -12,26 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+    <i class="material-icons inputIcon">person</i>
+    <%= form.text_field :username, placeholder: "Username", :class => "inputField" %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
+    <i class="material-icons inputIcon">lock</i>
+    <%= form.text_field :password, placeholder: "Password", :class => "inputField"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :aws_key %>
-    <%= form.text_field :aws_key %>
-  </div>
+  <div id="awsInputs">
+    <div class="field">
+      <i class="material-icons inputIcon">vpn_key</i>
+      <%= form.text_field :aws_key, placeholder: "AWS Key", :class => "inputField" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :aws_secret %>
-    <%= form.text_field :aws_secret %>
+    <div class="field">
+      <i class="material-icons inputIcon">enhanced_encryption</i>
+      <%= form.text_field :aws_secret, placeholder: "AWS Secret", :class => "inputField" %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => "submitButton" %>
   </div>
 <% end %>

@@ -12,6 +12,9 @@ gem "sprockets-rails"
 
 gem "sqlite3", "~> 1.5"
 
+# Google material icons for better design
+gem 'material_icons'
+
 #############################
 #  MongoDB deps begin       #
 #############################

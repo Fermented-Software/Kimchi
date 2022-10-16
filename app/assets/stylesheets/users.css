@@ -1,4 +1,130 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+.leftPanel{
+    height: 100%;
+    width: 60%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+    background: rgb(255, 255, 255, 0.9);
+}
+
+.rightPanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+    background: linear-gradient(to right, #EEC41E, #ec9900);
+    width: 40%;
+}
+
+.backButton{
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    left: 10px;
+    top: 10px;
+    color: #000814;
+}
+
+.field {
+    height: 64px;
+}
+
+.inputField {
+    text-indent: 40px;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    padding: 20px 0;
+    height: 48px;
+    border: none;
+    border-bottom:  solid 2px rgba(238, 196, 30, 1);
+    background:  rgba(245, 245, 245, 0);
+    width: 100%;
+    box-sizing: border-box;
+    transition: all .3s linear;
+    font-weight: 500;
+    color: #380479;
+    -webkit-appearance:  none;
+}
+
+.inputIcon {
+    color: rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: 40px;
+    left: 8px;
+}
+
+.inputField:focus {
+    border-bottom:  0;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.submitButton {
+    height: 32px;
+    width: 80%;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    border-radius: 7px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    background-color: #F1C71D;
+}
+
+#awsInputs {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#rightText {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+#rightTitle {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#leftTitle{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#logo{
+    height: 256px;
+    width: 256px;
+}
+
+#loginScreen {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+#signUpDiv{
+    height: 75%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    max-width: 1200px;
+    align-self: center;
+    border-radius: 10px;
+    opacity: 90%;
+    color: #000814;
+}
