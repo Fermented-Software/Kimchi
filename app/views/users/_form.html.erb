@@ -24,16 +24,16 @@
   <div id="awsInputs">
     <div class="field">
       <i class="material-icons inputIcon">vpn_key</i>
-      <%= form.text_field :aws_key, placeholder: "AWS Key", :class => "inputField" %>
+      <%= form.text_field :aws_key, placeholder: "AWS Key ID", :class => "inputField" %>
     </div>
 
     <div class="field">
       <i class="material-icons inputIcon">enhanced_encryption</i>
-      <%= form.text_field :aws_secret, placeholder: "AWS Secret", :class => "inputField" %>
+      <%= form.text_field :aws_secret, placeholder: "AWS Key Secret", :class => "inputField" %>
     </div>
   </div>
 
   <div class="actions">
-    <%= form.submit :class => "submitButton" %>
+    <%= form.submit "Sign-up!", :class => "submitButton"%>
   </div>
 <% end %>
