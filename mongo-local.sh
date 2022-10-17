@@ -1,1 +1,1 @@
-mongod --config /usr/local/etc/mongod.conf 2>&1 > /dev/null &
+mongod --config /usr/local/etc/mongod.conf

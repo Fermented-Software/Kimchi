@@ -12,11 +12,6 @@ COPY Gemfile.lock /kimchi/Gemfile.lock
 RUN bundle install
 COPY . /kimchi
 
-# Add a script to be executed every time the container starts.
-COPY entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
-
 # The ruby environment to be loaded
 ENV RUBY_ENV=development
 
