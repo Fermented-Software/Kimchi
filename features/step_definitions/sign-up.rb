@@ -1,5 +1,5 @@
 When('click on the {string} button') do |button_name|
-  pending # Write code here that turns the phrase above into concrete actions
+  click_on "Sign-up!"
 end
 
 Given('I am at the sign-up page') do
@@ -7,11 +7,15 @@ Given('I am at the sign-up page') do
 end
 
 When('I fill the field {string} with {string}') do |field, value|
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in field, :with => value
 end
 
 Then('the data should have been persisted at a database') do
-  pending # Write code here that turns the phrase above into concrete actions
+  user = User.last
+  expect(user.username).to eq('Miguel Vasconcelos')
+  expect(user.password).to eq('abcdefg') 
+  expect(user.aws_key).to eq('AKIAIOSFODNN7EXAMPLE') 
+  expect(user.aws_secret).to eq('wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY') 
 end
 
 When('leave the field {string} empty') do |string|
@@ -23,5 +27,5 @@ Then('the error message {string} should show up') do |string|
 end
 
 Then('I should be redirected to my dashboard') do
-  pending # Write code here that turns the phrase above into concrete actions
+  assert_current_path("/dashboard")
 end
