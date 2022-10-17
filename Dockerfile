@@ -16,7 +16,11 @@ COPY . /kimchi
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
+
+# The ruby environment to be loaded
+ENV RUBY_ENV=development
+
 EXPOSE 3000
 
 # Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0", "-e", "development"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
