@@ -17,7 +17,7 @@ gem "sqlite3", "~> 1.5"
 #############################
 
 # Use mongo as the main database
-gem 'mongoid', '~> 7.0.5'
+gem 'mongoid', '~> 8.0'
 gem 'net-smtp', '~> 0.3.2'
 
 #############################
@@ -90,7 +90,6 @@ group :test do
   gem "webdrivers"
   gem 'cucumber-rails', require: false
   # database_cleaner is not required, but highly recommended
-  # gem 'database_cleaner'
   gem 'database_cleaner-mongoid'
 end
 
