@@ -42,6 +42,7 @@ Para rodar o container:
 `docker compose up`
 
 ## Links úteis:
-[Documentação da API do Rails](https://api.rubyonrails.org/v6.0.6/)
-[Documentação da API do Capybara](https://rubydocs.org/d/capybara-3-19-0/)
-[Documentação da API do Rspec](https://rspec.info/documentation/)
+[Documentação da API do Rails](https://api.rubyonrails.org/v6.0.6/)  
+[Documentação da API do Capybara](https://rubydocs.org/d/capybara-3-19-0/)  
+[Documentação da API do Rspec](https://rspec.info/documentation/)  
+[Documentação da API do AWS-SDK](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/)  
