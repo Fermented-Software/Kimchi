@@ -37,6 +37,9 @@
 # Test Coverages
 /coverage
 
+# RubyMine files
+/.idea/
+
 # Vim files
 *.swp
 *~
