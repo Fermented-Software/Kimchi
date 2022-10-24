@@ -162,9 +162,7 @@ development:
 test:
   clients:
     default:
-      database: kimchi_test
-      hosts:
-        - localhost:27017
+      uri: "<%= Rails.application.credentials.development.mongodb.uri %>"
       options:
         server_selection_timeout: 1
         read:
