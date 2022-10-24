@@ -10,6 +10,9 @@ on:
       - main
       - develop 
 
+env:
+  RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+
 jobs:
   build:
     name: Build and Test
