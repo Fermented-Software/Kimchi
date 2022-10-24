@@ -1,1 +1,1 @@
-bundle exec rails s -b 0.0.0.0 -e test
+bundle exec rails s -b 0.0.0.0 -e local

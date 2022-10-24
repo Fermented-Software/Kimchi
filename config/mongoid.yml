@@ -168,3 +168,15 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+local:
+  clients:
+    default:
+      database: kimchi_test
+      hosts:
+        - localhost:27017
+      options:
+        server_selection_timeout: 1
+        read:
+          mode: :primary
+        max_pool_size: 1
