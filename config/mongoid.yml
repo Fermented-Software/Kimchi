@@ -182,3 +182,15 @@ local:
         read:
           mode: :primary
         max_pool_size: 1
+
+development:
+  clients:
+    default:
+      database: kimchi_test
+      hosts:
+        - mongodb:27017
+      options:
+        server_selection_timeout: 1
+        read:
+          mode: :primary
+        max_pool_size: 1
