@@ -3,17 +3,24 @@ development:
   clients:
     # Defines the default client. (required)
     default:
+      # If using MongoDB Atlas, uncomment the following line and replace the
+      # sample URI with your cluster URI from the Atlas console.
+      uri: "<%= Rails.application.credentials.development.mongodb.uri %>"
+
       # Defines the name of the default database that Mongoid can connect to.
-      # (required).
-      database: kimchi_development
+      # database: kimchi_development
+
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
-      hosts:
-        - mongodb:27017
+      # If using a local MongoDB deployment, either a URI or a host list
+      # may be specified.
+      # hosts:
+      #   - localhost:27017
       options:
         # Note that all options listed below are Ruby driver client options (the mongo gem).
         # Please refer to the driver documentation of the version of the mongo gem you are using
         # for the most up-to-date list of options.
+        # These may also be provided in the URI as URI options.
         #
         # Change the default write concern. (default = { w: 1 })
         # write:
@@ -41,7 +48,7 @@ development:
         # :mongodb_cr, :mongodb_x509, and :plain. Note that all authentication
         # mechanisms require username and password, with the exception of :mongodb_x509.
         # Default on mongoDB 3.0 is :scram, default on 2.4 and 2.6 is :plain.
-        # auth_mech: :scram
+        auth_mech: :scram
 
         # The database or source to authenticate the user against.
         # (default: the database specified above or admin)
