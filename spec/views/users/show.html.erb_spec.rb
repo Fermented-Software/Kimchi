@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "users/show", type: :view do
   before(:each) do
     assign(:user, User.create!(
-      username: "Username",
+      email: "email@email.com",
       password: "Password",
       aws_key: "Aws Key",
       aws_secret: "Aws Secret"
@@ -12,7 +12,7 @@ RSpec.describe "users/show", type: :view do
 
   it "renders attributes in <p>" do
     render
-    expect(rendered).to match(/Username/)
+    expect(rendered).to match(/E-mail/)
     expect(rendered).to match(/Password/)
     expect(rendered).to match(/Aws Key/)
     expect(rendered).to match(/Aws Secret/)
