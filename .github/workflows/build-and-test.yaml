@@ -29,10 +29,15 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.8.0
+        with:
+          mongodb-version: 4.2
+
       - name: Run Rspec test suite
         run: rake spec
 
-      - name: Run Cucumber Tests
+      - name: Run Cucumber test suite
         run: rake cucumber
 
       - name: Send test coverage to Coveralls.io
