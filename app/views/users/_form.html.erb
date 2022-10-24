@@ -11,15 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <i class="material-icons inputIcon">person</i>
-    <%= form.text_field :email, placeholder: "E-mail", :class => "inputField" %>
-  </div>
+  <i class="material-icons inputIcon">person</i>
+  <%= form.text_field :email, placeholder: "E-mail", :class => "inputField" %>
 
-  <div class="field">
-    <i class="material-icons inputIcon">lock</i>
-    <%= form.password_field :password, placeholder: "Password", :class => "inputField"  %>
-  </div>
+  <i class="material-icons inputIcon">lock</i>
+  <%= form.password_field :password, placeholder: "Password", :class => "inputField"  %>
 
   <div class="actions">
     <%= form.submit "Sign-up!", :class => "submitButton"%>
