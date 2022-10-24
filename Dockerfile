@@ -13,7 +13,7 @@ RUN bundle install
 COPY . /kimchi
 
 # The ruby environment to be loaded
-ENV RUBY_ENV=local
+ENV RUBY_ENV=production
 
 EXPOSE 3000
 

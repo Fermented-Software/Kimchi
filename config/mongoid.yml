@@ -1,11 +1,11 @@
-development:
+production:
   # Configure available database clients. (required)
   clients:
     # Defines the default client. (required)
     default:
       # If using MongoDB Atlas, uncomment the following line and replace the
       # sample URI with your cluster URI from the Atlas console.
-      uri: "<%= Rails.application.credentials.development.mongodb.uri %>"
+      uri: "<%= Rails.application.credentials.production.mongodb.uri %>"
 
       # Defines the name of the default database that Mongoid can connect to.
       # database: kimchi_development
