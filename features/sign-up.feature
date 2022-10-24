@@ -1,4 +1,4 @@
-Feature: Sign-in
+Feature: Sign-up
     As a User
     I want to access the platform with my credentials
     So that i can see my data streams
