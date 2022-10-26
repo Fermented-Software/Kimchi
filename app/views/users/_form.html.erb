@@ -1,0 +1,23 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <i class="material-icons inputIcon">person</i>
+  <%= form.text_field :email, placeholder: "E-mail", :class => "inputField" %>
+
+  <i class="material-icons inputIcon">lock</i>
+  <%= form.password_field :password, placeholder: "Password", :class => "inputField"  %>
+
+  <div class="actions">
+    <%= form.submit "Sign-up!", :class => "submitButton"%>
+  </div>
+<% end %>

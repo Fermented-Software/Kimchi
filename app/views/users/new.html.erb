@@ -1,0 +1,18 @@
+<div id="loginScreen">
+  <div id="signUpDiv">
+    <div class="leftPanel">
+      <%= link_to users_path do%>
+        <i class="material-icons backButton">arrow_back</i>
+      <% end %>
+      <h1 id="leftTitle">Sign Up</h1>
+
+      <%= render 'form', user: @user %>
+
+    </div>
+    <div class="rightPanel">
+      <h1 id="rightTitle">Kimchi</h1>
+      <p id="rightText">An easy way of reading data streams</p>
+      <%= image_tag asset_path("logoOutlined.png"), :id => "logo"%>
+    </div>
+  </div>
+</div>

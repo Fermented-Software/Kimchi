@@ -27,10 +27,22 @@ Utilizaremos o Pivotal Tracker, que é uma ferramenta de gestão de projetos Agi
 
 - Raul Mello
 
-## Como rodar o container Docker
+## Como rodar a aplicação
 
-### Para construir o container:
+### Localmente sem containers:
+Primeiramente, tornar os scripts `.sh` executáveis:
+`chmod u+x *.sh`
+
+Então, iniciar o daemon do MongoDB:
+`./mongo-local.sh`
+
+Após execução, iniciar o servidor do rails em outro terminal: 
+`./rails-server-local.sh`
+
+### Através de containers Docker
+
+Para construir o container:
 `docker compose build`
 
-### Para rodar o container:
+Para rodar o container:
 `docker compose up`
