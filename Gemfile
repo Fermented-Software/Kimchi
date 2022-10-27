@@ -4,13 +4,25 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+# 6.0 is needed because of mongoid
 gem "rails", "~> 7.0.4"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+gem "sqlite3", "~> 1.5"
+
+#############################
+#  MongoDB deps begin       #
+#############################
+
+# Use mongo as the main database
+gem 'mongoid', '~> 8.0'
+gem 'net-smtp', '~> 0.3.2'
+
+#############################
+#  MongoDb deps end         #
+#############################
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -78,6 +90,6 @@ group :test do
   gem "webdrivers"
   gem 'cucumber-rails', require: false
   # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
+  gem 'database_cleaner-mongoid'
 end
 
