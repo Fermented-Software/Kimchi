@@ -1,8 +1,5 @@
 require "active_support/core_ext/integer/time"
 
-# Allow Heroku DNS in development environment
-Rails.application.config.hosts << "kimchi-app.herokuapp.com"
-
 Rails.application.configure do
   # Configure 'rails notes' to inspect Cucumber files
   config.annotations.register_directories('features')
