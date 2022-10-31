@@ -1,0 +1,30 @@
+#dashboardScreen {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.leftPanel{
+    height: 100%;
+    width: 20%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+    background: #001D3D;
+}
+
+.rightPanel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+    background: rgb(255, 255, 255, 0.9);
+    width: 40%;
+}
