@@ -1,0 +1,18 @@
+<div class="navbar">
+  <div class="logoNavbar">
+    <%= image_tag asset_path("logoOutlined.png"), :id => "logoNavbar"%>
+    <p id="titleNavbar">Kimchi</p>
+  </div>
+  <%= link_to "list" do%>
+    <div class="iconDiv">
+      <i class="material-icons navbarIcon">list</i>
+      <p>Data Stream List</p>
+    </div>
+  <% end %>
+  <%= link_to "active-shards" do%>
+    <div class="iconDiv">
+      <i class="material-icons navbarIcon">diamond</i>
+      <p>Active Shards</p>
+    </div>
+  <% end %>
+</div>

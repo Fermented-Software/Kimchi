@@ -1,5 +1,5 @@
 Given('That I am at the dashboard page') do
-  visit "/"
+  visit "/dashboard"
 end
 
 And('I am successfully logged') do
@@ -14,18 +14,22 @@ And('I dont have my AWS credentials registered') do
 
 end
 
-When('I click a different option on the navbar') do
-
+When('I click on the {string} button on Navbar') do |button_name|
+  click_on button_name
 end
 
-Then('I should have the list of active shards showing as default') do
-
+Then('I should be redirected to {string}') do
+  visit "/dashboard"
 end
 
 And('I should see a message asking to add my AWS credentials') do
 
 end
 
-Then('I should be redirected to the page of the selected option') do
+Then('I should see a welcome message on the page') do
+
+end
+
+Then('I should see a message asking for my AWS credentials') do
 
 end
