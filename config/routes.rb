@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :users
   get '/sign-up', to: 'users#new'
   get "/dashboard", to: "dashboard#index"
+  get '/log-in', to: 'login#login_receive'
+  post '/log-in', to: 'login#login_answer'
 end
