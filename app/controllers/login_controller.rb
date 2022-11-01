@@ -3,16 +3,28 @@ class LoginController < ApplicationController
         @user = User.new()
     end
 
-    def login_answer(user_params)
-        @user = User.new(user_params)
+    def login_answer()
+        @user = User.new(
+            :email=> params[:email],
+            :password=> params[:password]
+        )
+        
+        if @user.valid?
+            var = User.where(email: @user.email).first
 
-    end
-
-    private
-
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:email, :password, :aws_key, :aws_secret)
+            if var.nil?
+                @user.errors.add(:email, message: "This email is not registered")
+                render :login_receive, status: :unprocessable_entity 
+            else
+                if var.password == @user.password
+                else
+                    @user.errors.add(:email, message: "Wrong password")
+                    render :login_receive, status: :unprocessable_entity 
+                end
+            end
+        else
+            render :login_receive, status: :unprocessable_entity 
+        end
     end
 
 end

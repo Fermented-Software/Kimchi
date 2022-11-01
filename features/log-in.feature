@@ -48,5 +48,5 @@ Feature: Log-in
         And that I am at the login page
         When I fill the field "E-mail" with "-[------->+<]>-.-[->+++++<]>++.+++++++..+++.[--->+<]>-----.---[->+++<]>.-[--->+<]>---.+++.------.--------."
         And I leave the field "Password" empty
-        And click on the "Sign-up" button
+        And click on the "Log-in" button
         Then the error message "Please fill in a valid e-mail" should show up
