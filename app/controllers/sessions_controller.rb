@@ -1,4 +1,4 @@
-class LoginController < ApplicationController
+class SessionsController < ApplicationController
     def login_receive
         @user = User.new()
     end
