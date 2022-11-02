@@ -14,8 +14,8 @@ And('I dont have my AWS credentials registered') do
 
 end
 
-When('I click on the {string} button on Navbar') do |button_name|
-  click_on button_name
+When('I click on the {string} anchor on Navbar') do |anchor_name|
+  find("a", :text => anchor_name)
 end
 
 Then('I should be redirected to {string}') do
