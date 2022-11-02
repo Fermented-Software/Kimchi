@@ -1,32 +1,28 @@
 class SessionsController < ApplicationController
     def login_receive
-        @user = User.new()
+        @user = User.new
     end
 
-    def login_answer()
-        @user = User.new(
-            :email=> params[:email],
-            :password=> params[:password]
-        )
-        
-        if @user.valid?
-            var = User.where(email: @user.email).first
+    def create
+        @user = User.new(:email => params[:email], :password=> params[:password])
 
-            if var.nil?
+        if @user.valid?
+            user = User.where(email: @user.email).first
+
+            if user.nil?
                 @user.errors.add(:email, message: "This email is not registered")
-                render :login_receive, status: :unprocessable_entity 
+                render :login_receive, status: :unprocessable_entity
             else
-                if var.password == @user.password
+                if user.password == @user.password
+                    session[:user_email] = @user.email
+                    redirect_to dashboard_index_path
                 else
                     @user.errors.add(:email, message: "Wrong password")
-                    render :login_receive, status: :unprocessable_entity 
+                    render :login_receive, status: :unprocessable_entity
                 end
             end
         else
-            render :login_receive, status: :unprocessable_entity 
+            render :login_receive, status: :unprocessable_entity
         end
     end
-
 end
-
-
