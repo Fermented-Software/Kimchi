@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   resources :users
   get '/sign-up', to: 'users#new'
-  get "/dashboard", to: "dashboard#index"
+  get '/dashboard', to: 'dashboard#index'
+
+  resources :features
+  get '/liststreams', to: 'liststreams#index'
 end
