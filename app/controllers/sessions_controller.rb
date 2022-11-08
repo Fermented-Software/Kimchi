@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
                 @user.errors.add(:email, message: "This email is not registered")
                 render :login_receive, status: :unprocessable_entity and return
             rescue InvalidPasswordError => e
-                @user.errors.add(:email, message: "Wrong password")
+                @user.errors.add(:password, message: "Wrong password")
                 render :login_receive, status: :unprocessable_entity and return
             end
 
