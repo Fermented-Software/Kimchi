@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
         if @user.valid?
             begin
-                stored_user = helpers.create_session(@user.email, @user.password)
+                stored_user = SessionsHelper.create_session(@user.email, @user.password)
             rescue NonExistentUserError => e
                 @user.errors.add(:email, message: "This email is not registered")
                 render :login_receive, status: :unprocessable_entity and return

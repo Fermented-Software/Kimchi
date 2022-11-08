@@ -23,7 +23,7 @@ describe SessionsController, :type => :request do
     email = "email@email.com"
     password = "testing"
 
-    allow_any_instance_of(SessionsHelper).to receive(:create_session).and_raise(NonExistentUserError.new(email))
+    allow(SessionsHelper).to receive(:create_session).and_raise(NonExistentUserError.new(email))
     post sessions_url, :params => { "email": email, "password": password }
 
     expect(response).to render_template(:login_receive)
@@ -34,7 +34,7 @@ describe SessionsController, :type => :request do
     email = "email@email.com"
     password = "testing"
 
-    allow_any_instance_of(SessionsHelper).to receive(:create_session).and_raise(InvalidPasswordError.new)
+    allow(SessionsHelper).to receive(:create_session).and_raise(InvalidPasswordError.new)
     post sessions_url, :params => { "email": email, "password": password }
 
     expect(response).to render_template(:login_receive)
@@ -45,7 +45,7 @@ describe SessionsController, :type => :request do
     email = "email@email.com"
     password = "testing"
 
-    allow_any_instance_of(SessionsHelper).to receive(:create_session) { User.new(:email => email, :password => password) }
+    allow(SessionsHelper).to receive(:create_session) { User.new(:email => email, :password => password) }
     post sessions_url, :params => { "email": email, "password": password }
 
     expect(response).to redirect_to(dashboard_index_path)

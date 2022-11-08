@@ -1,6 +1,6 @@
 module SessionsHelper
-  def create_session(email, password)
-    stored_user = User.where(email: email).first
+  def self.create_session(email, password)
+    stored_user = get_user_by_email(email)
 
     if stored_user.nil?
       raise NonExistentUserError.new(email)
@@ -11,5 +11,9 @@ module SessionsHelper
         return stored_user
       end
     end
+  end
+
+  def self.get_user_by_email(email)
+    User.where(email: email).first
   end
 end
