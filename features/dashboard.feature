@@ -17,6 +17,6 @@ Feature: Dashboard
 
   Scenario: User selects an option on dashboard
     Given That I am at the dashboard page
-    And I am successfully logged
+#    And I am successfully logged
     When I click on the "list" anchor on Navbar
     Then I should be redirected to "/data-streams"

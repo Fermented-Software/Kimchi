@@ -15,10 +15,10 @@ And('I dont have my AWS credentials registered') do
 end
 
 When('I click on the {string} anchor on Navbar') do |anchor_name|
-  find("a", :text => anchor_name)
+  find("a", :text => anchor_name).click
 end
 
-Then('I should be redirected to {string}') do |navbar_option|
+Then('I should be redirected to {string}') do |page_name|
   assert_current_path(page_name)
 end
 
