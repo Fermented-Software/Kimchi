@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    def login_receive
+    def show_login
         @user = User.new
     end
 
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
             end
 
             if stored_user.email == @user.email
-                session[:user_email] == stored_user.email
+                session[:user_id] == stored_user.id
                 redirect_to dashboard_index_path
             end
         else

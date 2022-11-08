@@ -23,6 +23,7 @@ describe SessionsHelper do
     allow(SessionsHelper).to receive(:get_user_by_email) { User.new(:email => email, :password => password) }
 
     result = SessionsHelper.create_session(email, password)
+    expect(result.id).to be_truthy
     expect(result.email).to eq(email)
     expect(result.password).to eq(password)
   end
