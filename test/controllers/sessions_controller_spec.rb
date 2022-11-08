@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'sessions_helper'
 
 describe SessionsController, :type => :request do
   it "should render login_receive with status 422 if user email is invalid" do
