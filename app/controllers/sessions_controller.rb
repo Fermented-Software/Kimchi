@@ -4,22 +4,22 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.new(:email => params[:email], :password=> params[:password])
+        @user = User.new(:email => params[:email], :password => params[:password])
 
         if @user.valid?
-            user = User.where(email: @user.email).first
-
-            if user.nil?
+            begin
+                stored_user = helpers.create_session(@user.email, @user.password)
+            rescue NonExistentUserError => e
                 @user.errors.add(:email, message: "This email is not registered")
-                render :login_receive, status: :unprocessable_entity
-            else
-                if user.password == @user.password
-                    session[:user_email] = @user.email
-                    redirect_to dashboard_index_path
-                else
-                    @user.errors.add(:email, message: "Wrong password")
-                    render :login_receive, status: :unprocessable_entity
-                end
+                render :login_receive, status: :unprocessable_entity and return
+            rescue InvalidPasswordError => e
+                @user.errors.add(:email, message: "Wrong password")
+                render :login_receive, status: :unprocessable_entity and return
+            end
+
+            if stored_user.email == @user.email
+                session[:user_email] == stored_user.email
+                redirect_to dashboard_index_path
             end
         else
             render :login_receive, status: :unprocessable_entity
