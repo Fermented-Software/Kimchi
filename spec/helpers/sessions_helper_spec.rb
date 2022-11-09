@@ -6,15 +6,15 @@ describe SessionsHelper do
     password = "testing"
     allow(SessionsHelper).to receive(:get_user_by_email) { nil }
 
-    expect { SessionsHelper.create_session(email, password) }.to raise_error(NonExistentUserError.new(email))
+    expect { SessionsHelper.create_session(email, password) }.to raise_error(NonExistentUserError)
   end
 
-  it "should raise InvalidPasswordError if password does not match the password present in database" do
+  it "should raise NonExistentUserError if password does not match the password present in database" do
     email = "email@email.com"
     password = "testing"
     allow(SessionsHelper).to receive(:get_user_by_email) { User.new(:email => email, :password => "abcd") }
 
-    expect { SessionsHelper.create_session(email, password) }.to raise_error(InvalidPasswordError.new)
+    expect { SessionsHelper.create_session(email, password) }.to raise_error(NonExistentUserError)
   end
 
   it "should return user present in database if passwords match" do

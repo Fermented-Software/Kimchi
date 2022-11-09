@@ -1,5 +1,5 @@
 class NonExistentUserError < StandardError
-  def initialize(email)
-    super("No user found with email #{email}")
+  def initialize
+    super("E-mail or password could not be found")
   end
 end

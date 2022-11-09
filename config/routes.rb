@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get '/sign-up', to: 'users#new'
 
   resources :sessions
-  get '/log-in', to: 'sessions#login_receive'
+  get '/log-in', to: 'sessions#login'
   post '/log-in', to: 'sessions#create'
 end
