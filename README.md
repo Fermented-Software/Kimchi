@@ -30,13 +30,18 @@ Utilizaremos o Pivotal Tracker, que é uma ferramenta de gestão de projetos Agi
 ## Como rodar a aplicação
 
 ### Localmente sem containers:
+OBS: Para rodar a aplicação localmente, é preciso ter instalado na máquina o MongoDB Community Version.  
+
 Primeiramente, tornar os scripts `.sh` executáveis:
 `chmod u+x *.sh`
 
-Então, iniciar o daemon do MongoDB:
+Então instalar dependências, caso seja a primeira vez rodando ou tenha alterações no seu Gemfile:
+`bundle install`
+
+Logo, iniciar o daemon do MongoDB em um terminal separado:
 `./mongo-local.sh`
 
-Após execução, iniciar o servidor do rails em outro terminal: 
+Após execução do daemon do banco de dados, iniciar o servidor do rails: 
 `./rails-server-local.sh`
 
 ### Através de containers Docker

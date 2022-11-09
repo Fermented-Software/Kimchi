@@ -44,3 +44,5 @@
 *.swp
 *~
 
+# mongo local database
+mongodb/db
