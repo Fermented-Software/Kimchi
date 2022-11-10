@@ -16,8 +16,8 @@ class ListstreamsController < ApplicationController
       access_key_id: credentials[:aws_key],
       secret_access_key: credentials[:aws_secret]
     )
-    resp = client.list_streams({limit: 5})
-    @streams = resp.stream_names
+    resp = Array.new(5, "kimchi streams")
+    @streams = resp
   end
 
   def index
