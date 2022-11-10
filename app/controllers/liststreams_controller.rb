@@ -10,6 +10,16 @@ class ListstreamsController < ApplicationController
     @streams = resp.stream_names
   end
 
+  def temp_list_streams
+    credentials = {:aws_key => "123", :aws_secret => "abc"}
+    client = Aws::Kinesis::Client.new(
+      access_key_id: credentials[:aws_key],
+      secret_access_key: credentials[:aws_secret]
+    )
+    resp = client.list_streams({limit: 5})
+    @streams = resp.stream_names
+  end
+
   def index
   end
 
