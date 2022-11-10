@@ -1,12 +1,9 @@
 module SessionsHelper
-  def self.create_session(email, password)
-    # User trying to log-in
-    @user = User.new(:email => email, :password=> password)
-
-    stored_user = [@user].filter { |user| user.valid? }
+  def self.create_session(session_user)
+    stored_user = [session_user].filter { |user| user.valid? }
                        .map { |user| get_user_by_email user }
                        .filter { |user| not user.nil? }
-                       .filter { |user| user.password == @user.password }
+                       .filter { |user| user.password == session_user.password }
 
     if stored_user.empty? or stored_user.first.nil?
       raise NonExistentUserError.new

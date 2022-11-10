@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         @user = User.new(:email => params[:email], :password => params[:password])
 
         begin
-            stored_user = SessionsHelper.create_session(@user.email, @user.password)
+            stored_user = SessionsHelper.create_session(@user)
             session[:user_id] == stored_user.id
             redirect_to dashboard_index_path
         rescue NonExistentUserError => e
