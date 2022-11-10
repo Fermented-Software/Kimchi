@@ -2,9 +2,8 @@ require 'rails_helper'
 
 RSpec.describe ListstreamsController do
 
-  it "should list streams when valid credentials are provided" do
-    streams = subject.list_streams
-    expect(streams).not_to be(nil)
+  it "list streams should return an array as a response of successfull API call" do
+    streams = subject.temp_list_streams
+    expect(streams).to be_an_instance_of(Array)
   end
-  
 end
