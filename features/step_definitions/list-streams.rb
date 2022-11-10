@@ -14,12 +14,12 @@ And('my streams have successfully loaded') do |success_string|
   expect(page).to have_content(success_string)
 end
 
-Then('I expect to see a list of my data streams') do
-  pending
+Then('I expect to see a list of my data streams') do |stream_list|
+  expect(page).to have_content(stream_list)
 end
 
-And('I receive a connection error') do
-  pending
+And('I receive a connection error') do |connection_error|
+  expect(page).to have_content(connection_error)
 end
 
 Then('I expect to receive a clear and descriptive message of error') do |error_string|
