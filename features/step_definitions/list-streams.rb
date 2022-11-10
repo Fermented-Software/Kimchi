@@ -1,17 +1,17 @@
-When('click on {string} button') do |button_name|
-  click_on button_name
-end
-
 Given('that I have signed-in') do
   visit '/dashboard' 
 end
 
-And('I am at the dashboard page') do
-  expect(page).to have_current_path("/dashboard")
+Given('I am at the liststreams page') do
+  visit "/liststreams"
 end
 
 And('my streams have successfully loaded') do |success_string|
   expect(page).to have_content(success_string)
+end
+
+And('I click on {string} button') do |button_name|
+  click_on button_name
 end
 
 Then('I expect to see a list of my data streams') do |stream_list|

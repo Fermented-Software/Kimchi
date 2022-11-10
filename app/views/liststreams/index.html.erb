@@ -2,6 +2,10 @@
   <h1>Kinesis stream list</h1>
   <h3>Your's streams:</h3>
   <div class="listStreams">
-	<%= list_streams %>
+	<%= button_to "load streams", action: "temp_list_streams"%>
+	//<% @streams.each do |stream| %>
+	//  <%= stream %>
+	//<% end %>
+	<%= @streams %>
   </div>
 </div>

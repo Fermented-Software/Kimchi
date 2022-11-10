@@ -18,11 +18,13 @@ class ListstreamsController < ApplicationController
     )
     resp = Array.new(5, "kimchi streams")
     @streams = resp
+    render :index
   end
-
+  
   def index
+    @streams = []
   end
 
-  helper_method :list_streams
+  helper_method :temp_list_streams
 
 end
