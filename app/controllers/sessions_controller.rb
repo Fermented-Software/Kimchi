@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
             session[:user_id] == stored_user.id
             redirect_to dashboard_index_path
         rescue NonExistentUserError => e
+            puts e.message
             @user.errors.add(:base, message: e.message)
             render :login, status: :unprocessable_entity
         end
