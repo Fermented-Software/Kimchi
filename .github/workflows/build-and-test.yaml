@@ -12,6 +12,7 @@ on:
 
 env:
   RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+  CUCUMBER_OPTS: --backtrace
 
 jobs:
   build:
@@ -33,7 +34,7 @@ jobs:
         run: rake spec
 
       - name: Run Cucumber test suite
-        run: rake cucumber
+        run: rake cucumber --backtrace
 
       - name: Send test coverage to Coveralls.io
         uses: coverallsapp/github-action@master
