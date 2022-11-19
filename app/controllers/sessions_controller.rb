@@ -6,10 +6,6 @@ class SessionsController < ApplicationController
     def create
         @user = User.new(:email => params[:email], :password => params[:password])
 
-        puts "Session User:"
-        puts @user.email
-        puts @user.password
-
         begin
             stored_user = SessionsHelper.create_session(@user)
             session[:user_id] == stored_user.id
