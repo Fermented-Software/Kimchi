@@ -6,12 +6,15 @@ class SessionsController < ApplicationController
     def create
         @user = User.new(:email => params[:email], :password => params[:password])
 
+        puts "Session User:"
+        puts @user.email
+        puts @user.password
+
         begin
             stored_user = SessionsHelper.create_session(@user)
             session[:user_id] == stored_user.id
             redirect_to dashboard_index_path
         rescue NonExistentUserError => e
-            puts e.message
             @user.errors.add(:base, message: e.message)
             render :login, status: :unprocessable_entity
         end
