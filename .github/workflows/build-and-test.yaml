@@ -34,7 +34,7 @@ jobs:
         run: rake spec
 
       - name: Run Cucumber test suite
-        run: rake cucumber --backtrace
+        run: rake cucumber
 
       - name: Send test coverage to Coveralls.io
         uses: coverallsapp/github-action@master
