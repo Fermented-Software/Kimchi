@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :dashboard
   get '/dashboard', to: 'dashboard#index'
 
+  resources :features
+  get '/liststreams', to: 'liststreams#index'
+
   resources :users
   get '/sign-up', to: 'users#new'
 
