@@ -93,5 +93,7 @@ group :test do
   gem 'cucumber-rails', require: false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner-mongoid'
+  # required in order to use assert_template method in testing
+  gem 'rails-controller-testing'
 end
 

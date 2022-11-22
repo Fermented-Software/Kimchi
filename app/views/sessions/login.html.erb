@@ -1,0 +1,42 @@
+<div id="loginScreen">
+  <div id="signUpDiv">
+    <div class="leftPanel">
+      <%= link_to users_path do%>
+        <i class="material-icons backButton">arrow_back</i>
+      <% end %>
+      <h1 id="leftTitle">Log In</h1>
+
+      <div>
+        <%= form_with url: "/log-in", method: :postr do |form| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+              <ul>
+                <% @user.errors.each do |error| %>
+                  <li><%= error.message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <i class="material-icons inputIcon">person</i>
+          <%= form.text_field :email, placeholder: "E-mail", :class => "inputField" %>
+
+          <i class="material-icons inputIcon">lock</i>
+          <%= form.password_field :password, placeholder: "Password", :class => "inputField"  %>
+
+          <div class="actions">
+            <%= form.submit "Log-in!", :class => "submitButton"%>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="rightPanel">
+      <h1 id="rightTitle">Kimchi</h1>
+      <p id="rightText">An easy way of reading data streams</p>
+      <%= image_tag asset_path("logoOutlined.png"), :id => "logo"%>
+    </div>
+  </div>
+</div>

@@ -162,9 +162,12 @@ production:
 test:
   clients:
     default:
-      database: kimchi_test
-      hosts:
-        - localhost:27017
+      uri:
+        <% if ENV["CI"] %>
+          <%= Rails.application.credentials.ci_cd.mongodb.uri %>
+        <% else %>
+          "mongodb://localhost:27017/kimchi_test"
+        <% end %>
       options:
         server_selection_timeout: 1
         read:
@@ -174,9 +177,7 @@ test:
 local:
   clients:
     default:
-      database: kimchi_test
-      hosts:
-        - localhost:27017
+      uri: "mongodb://localhost:27017/kimchi_test"
       options:
         server_selection_timeout: 1
         read:
@@ -186,9 +187,7 @@ local:
 development:
   clients:
     default:
-      database: kimchi_test
-      hosts:
-        - mongodb:27017
+      uri: "mongodb://mongodb:27017/kimchi_test"
       options:
         server_selection_timeout: 1
         read:
