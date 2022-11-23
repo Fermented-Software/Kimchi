@@ -12,6 +12,9 @@
   </head>
 
   <body>
+    <% unless current_page?('/log-in') %>
+      <%= render 'layouts/navbar' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
