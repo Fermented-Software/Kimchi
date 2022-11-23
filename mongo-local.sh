@@ -1,1 +1,1 @@
-mongod --config /usr/local/etc/mongod.conf
+mkdir -p mongodb/db & mongod --config ./mongodb/mongod.conf | jq -r "{msg, attr}"
