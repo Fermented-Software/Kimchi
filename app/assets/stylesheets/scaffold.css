@@ -1,6 +1,9 @@
 body {
   background-color: #001D3D;
   color: #FFF;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
   margin: 0;
 }
 

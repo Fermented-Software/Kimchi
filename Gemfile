@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-# 6.0 is needed because of mongoid
 gem "rails", "~> 7.0.4"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -23,6 +22,9 @@ gem 'net-smtp', '~> 0.3.2'
 #############################
 #  MongoDb deps end         #
 #############################
+
+# AWS gems
+gem 'aws-sdk-kinesis', '~> 1'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
