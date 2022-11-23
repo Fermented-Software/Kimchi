@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :features
   get '/liststreams', to: 'liststreams#index'
-  post '/liststreams/list', to: 'liststreams#temp_list_streams'
+  post '/liststreams/list', to: 'liststreams#list_streams'
 
   resources :sessions
   get '/log-in', to: 'sessions#login'

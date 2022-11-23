@@ -1,9 +1,12 @@
 class ListstreamsController < ApplicationController
 
+  @limit = 5
+  
   def list_streams
     begin
-      @client = ListstreamsHelper.create_aws_client session[:user_email]
-      @resp = ListstreamsHelper.verify(@client, limit) 
+      @client = ListstreamsHelper.create_aws_client session[:user_id]
+      puts "blob"
+      @resp = ListstreamsHelper.build_response(@client, @limit)
       redirect_to({:action => "index"}, notice: @resp)
     rescue UnableToRescueAwsResponse => e
       @resp.errors.add(:base, message: e.message)
@@ -14,21 +17,9 @@ class ListstreamsController < ApplicationController
     end
   end
 
-  def temp_list_streams
-    credentials = {:aws_key => "123", :aws_secret => "abc"}
-    client = Aws::Kinesis::Client.new(
-      access_key_id: credentials[:aws_key],
-      secret_access_key: credentials[:aws_secret]
-    )
-    resp = Array.new(3, "kimchi streams")
-
-    #flash.now[:notice] = resp
-    redirect_to({:action => "index"}, notice: resp)
-  end
-
   def index
+    puts session[:user_id]
   end
 
-  helper_method :temp_list_streams
-
+  helper_method :list_streams
 end
