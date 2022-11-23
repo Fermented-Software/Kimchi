@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   resources :features
   get '/liststreams', to: 'liststreams#index'
-  post '/liststreams', to: 'liststreams#temp_list_streams'
+  post '/liststreams/list', to: 'liststreams#temp_list_streams'
 end

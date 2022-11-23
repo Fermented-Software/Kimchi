@@ -3,9 +3,8 @@
   <h3>Your's streams:</h3>
   <div class="listStreams">
 	<%= button_to "load streams", action: "temp_list_streams"%>
-	//<% @streams.each do |stream| %>
-	//  <%= stream %>
-	//<% end %>
-	<%= @streams %>
+	<% (flash.notice || []).each do |stream| %>
+	  <%= stream %>
+	<% end %>
   </div>
 </div>

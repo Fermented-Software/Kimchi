@@ -1,13 +1,17 @@
 class ListstreamsController < ApplicationController
 
   def list_streams
-    credentials = User.where(email: session[:user_email]).only(:aws_key, :aws_secret).last
-    client  = Aws::Kinesis::Client.new(
-      access_key_id: credentials[:aws_key],
-      secret_access_key: credentials[:aws_secret]
-    )
-    resp = client.list_streams({limit: 5})
-    @streams = resp.stream_names
+    begin
+      @client = ListstreamsHelper.create_aws_client session[:user_email]
+      @resp = ListstreamsHelper.verify(@client, limit) 
+      redirect_to({:action => "index"}, notice: @resp)
+    rescue UnableToRescueAwsResponse => e
+      @resp.errors.add(:base, message: e.message)
+      render :index, status: :unprocessable_entity
+    rescue AwsCredentialValidationError => e
+      @client.errors.add(:base, message: e.message)
+      render :index, status: :unprocessable_entity
+    end
   end
 
   def temp_list_streams
@@ -16,13 +20,13 @@ class ListstreamsController < ApplicationController
       access_key_id: credentials[:aws_key],
       secret_access_key: credentials[:aws_secret]
     )
-    resp = Array.new(5, "kimchi streams")
-    @streams = resp
-    render :index
+    resp = Array.new(3, "kimchi streams")
+
+    #flash.now[:notice] = resp
+    redirect_to({:action => "index"}, notice: resp)
   end
-  
+
   def index
-    @streams = []
   end
 
   helper_method :temp_list_streams

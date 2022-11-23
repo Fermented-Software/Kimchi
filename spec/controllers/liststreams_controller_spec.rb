@@ -6,4 +6,8 @@ RSpec.describe ListstreamsController do
     streams = subject.temp_list_streams
     expect(streams).to be_an_instance_of(Array)
   end
+
+  it "server down" do
+    
+  end
 end

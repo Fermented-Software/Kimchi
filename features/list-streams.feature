@@ -8,13 +8,4 @@ Feature: List Streams
         Given that I have signed-in
         And I am at the liststreams page
 		And I click on "load streams" button
-        And my streams have successfully loaded
         Then I expect to see a list of my data streams
-
-    Scenario: Infrastructure instability
-
-        Given that I have signed-in
-        And I am at the liststreams page
-		And I click on "load streams" button
-        And I receive a connection error
-        Then I expect to receive a clear and descriptive message of error
