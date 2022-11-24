@@ -1,7 +1,7 @@
 class ProfileController < ApplicationController
 
   # GET /profile
-  def show
+  def index
     @user = User.find(session[:user_id])
   end
 

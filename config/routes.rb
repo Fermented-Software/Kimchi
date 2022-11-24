@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   post '/log-in', to: 'sessions#create'
 
   resources :profile
-  get '/profile', to: 'profile#show'
+  get '/profile', to: 'profile#index'
 
 end
