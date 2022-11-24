@@ -11,6 +11,6 @@ And('I click on {string} button') do |button_name|
 end
 
 Then('I expect to see a list of my data streams') do
-  expected_msg = "kimchi streams kimchi streams kimchi streams"
+  expected_msg = "kimchi-stream-one kimchi-stream-two"
   expect(page).to have_content(expected_msg)
 end

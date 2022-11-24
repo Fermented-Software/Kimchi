@@ -5,7 +5,6 @@ class ListstreamsController < ApplicationController
   def list_streams
     begin
       @client = ListstreamsHelper.create_aws_client session[:user_id]
-      puts "blob"
       @resp = ListstreamsHelper.build_response(@client, @limit)
       redirect_to({:action => "index"}, notice: @resp)
     rescue UnableToRescueAwsResponse => e
@@ -18,7 +17,7 @@ class ListstreamsController < ApplicationController
   end
 
   def index
-    puts session[:user_id]
+    flash.clear
   end
 
   helper_method :list_streams
