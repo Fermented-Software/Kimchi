@@ -9,7 +9,7 @@ end
 
 Given("that I have AWS credentials saved") do
   @user = User.last
-  @user.update_attribute(:aws_key => 'key', :aws_secret => 'secret')
+  @user.update_attributes(:aws_key => 'key', :aws_secret => 'secret')
 end
 
 Then('the data should have been persisted at a database') do

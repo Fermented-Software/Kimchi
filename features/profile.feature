@@ -11,13 +11,13 @@ Feature: Profile
         Then I should see all my profile information
         And I should see my AWS credentials
 
-    Scenario: Successful Page Load With Credentials
-        Given that I have an account at the website
-        And that I am logged in
-        And that I am at the profile page
-        Then I should see all my profile information
-        And I should see a notice saying I have no AWS credentials saved
+    # Scenario: Successful Page Load Without Credentials
+    #     Given that I have an account at the website
+    #     And that I am logged in
+    #     And that I am at the profile page
+    #     Then I should see all my profile information
+    #     And I should see a notice saying I have no AWS credentials saved
 
-    Scenario: Unsuccessful Page Load
-        Given that I am at the profile page
-        Then I should see an unauthorized error page
+    # Scenario: Unsuccessful Page Load
+    #     Given that I am at the profile page
+    #     Then I should see an unauthorized error page

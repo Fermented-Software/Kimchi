@@ -6,13 +6,13 @@ Given("that I am logged in") do
 end
 
 Then("I should see all my profile information") do
-  expect(page).to have_content(@user.email)
-  expect(page).to have_content(@user.password)
+  expect(page).to have_content('email@email.com')
+  expect(page).to have_content('abacate')
 end
 
 Then("I should see my AWS credentials") do
-  expect(page).to have_content(@user.aws_key)
-  expect(page).to have_content(@user.aws_secret)
+  expect(page).to have_content('key')
+  expect(page).to have_content('secret')
 end
 
 Then("I should see a notice saying I have no AWS credentials saved") do |no_credentials_message|
