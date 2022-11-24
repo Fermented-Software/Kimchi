@@ -18,7 +18,7 @@ class ListstreamsController < ApplicationController
   end
 
   def index
-    puts session[:user_id]
+    flash.clear
   end
 
   helper_method :list_streams

@@ -5,8 +5,8 @@ module ListstreamsHelper
     credentials = User.only(:aws_key, :aws_secret).find(id_user)
     #credentials = User.where(email: email).only(:aws_key, :aws_secret).last
     client  = Aws::Kinesis::Client.new(
-      access_key_id: credentials[:aws_key],
-      secret_access_key: credentials[:aws_secret]
+      access_key_id: credentials[0].aws_key,
+      secret_access_key: credentials[0].aws_secret
     )
     if client.nil?
       raise AwsCredentialValidationError.new
