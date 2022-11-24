@@ -15,7 +15,7 @@ Then("I should see my AWS credentials") do
   expect(page).to have_content('secret')
 end
 
-Then("I should see a notice saying I have no AWS credentials saved") do |no_credentials_message|
+Then("I should see a notice saying {string}") do |no_credentials_message|
   expect(page).to have_content(no_credentials_message)
 end
 

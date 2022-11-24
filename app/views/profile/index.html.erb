@@ -17,3 +17,9 @@
   <strong>Aws secret:</strong>
   <%= @user.aws_secret %>
 </p>
+
+<p>
+  <% if !@user.aws_key && !@user.aws_secret %>
+    <strong>No AWS credentials saved<strong>
+  <% end %>
+</p>
