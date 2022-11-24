@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   resources :profile
   get '/profile', to: 'profile#index'
 
+  resources :profile
+  get '/unauthorized', to: 'unauthorized#index'
+
 end

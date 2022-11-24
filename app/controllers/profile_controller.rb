@@ -2,7 +2,11 @@ class ProfileController < ApplicationController
 
   # GET /profile
   def index
-    @user = User.find(session[:user_id])
+    begin
+      @user = User.find(session[:user_id])
+    rescue StandardError => e
+      redirect_to '/unauthorized'
+    end
   end
 
 end
