@@ -6,7 +6,8 @@ class ListstreamsController < ApplicationController
     begin
       @client = ListstreamsHelper.create_aws_client session[:user_id]
       @resp = ListstreamsHelper.build_response(@client, @limit)
-      redirect_to({:action => "index"}, notice: @resp)
+      flash[:streams] = @resp
+      redirect_to({:action => "index"})
     rescue UnableToRescueAwsResponse => e
       @resp.errors.add(:base, message: e.message)
       render :index, status: :unprocessable_entity
@@ -17,7 +18,7 @@ class ListstreamsController < ApplicationController
   end
 
   def index
-    flash.clear
+    flash.keep(:streams)
   end
 
   helper_method :list_streams

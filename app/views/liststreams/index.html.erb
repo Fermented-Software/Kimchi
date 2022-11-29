@@ -3,7 +3,7 @@
   <h3>Your's streams:</h3>
   <div class="listStreams">
 	<%= button_to "load streams", action: "list_streams"%>
-	<% (flash.notice || []).each do |stream| %>
+	<% (flash[:streams] || []).each do |stream| %>
 	  <%= stream %>
 	<% end %>
   </div>
