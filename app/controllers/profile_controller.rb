@@ -5,7 +5,7 @@ class ProfileController < ApplicationController
     begin
       @user = User.find(session[:user_id])
     rescue StandardError => e
-      redirect_to '/unauthorized'
+      render "unauthorized/index", status: :unauthorized
     end
   end
 
