@@ -10,4 +10,11 @@ Rails.application.routes.draw do
   resources :sessions
   get '/log-in', to: 'sessions#login'
   post '/log-in', to: 'sessions#create'
+
+  resources :profile
+  get '/profile', to: 'profile#index'
+
+  resources :profile
+  get '/unauthorized', to: 'unauthorized#index'
+
 end
