@@ -1,0 +1,10 @@
+<div>
+  <h1>Kinesis stream list</h1>
+  <h3>Your's streams:</h3>
+  <div class="listStreams">
+	<%= button_to "load streams", action: "list_streams"%>
+	<% (flash[:streams] || []).each do |stream| %>
+	  <%= stream %>
+	<% end %>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
     def login
-        @user = User.new
+      @user = User.new
     end
 
     def create
@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
         begin
             stored_user = SessionsHelper.create_session(@user)
-            session[:user_id] == stored_user.id
+            session[:user_id] = stored_user.id
             redirect_to dashboard_index_path
         rescue NonExistentUserError => e
             @user.errors.add(:base, message: e.message)

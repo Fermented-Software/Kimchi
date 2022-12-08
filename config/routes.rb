@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :users
   get '/sign-up', to: 'users#new'
 
+  resources :features
+  get '/liststreams', to: 'liststreams#index'
+  post '/liststreams/list', to: 'liststreams#list_streams'
+
   resources :sessions
   get '/log-in', to: 'sessions#login'
   post '/log-in', to: 'sessions#create'
